@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claude Pilot — Your Claude Code sessions, in your pocket.</title>
-  <!-- HTML Meta Tags -->
-  <title>Claude Pilot — Your Claude Code sessions, in your pocket.</title>
   <meta name="description" content="An iOS SSH terminal companion for Claude Code. Monitor, approve, and interact with your AI coding sessions from anywhere.">
 
   <!-- Facebook Meta Tags -->
@@ -24,6 +22,9 @@
 
   <!-- Meta Tags Generated via https://www.opengraph.io -->
   <link rel="icon" type="image/png" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -48,7 +49,7 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-inner">
-      <div class="hero-text fade-in">
+      <div class="hero-text scale-in">
         <div class="hero-badge"><span>v0.1.0</span> Pre-release beta</div>
         <h1>Your Claude Code sessions,<br><span class="gradient-text">in your pocket.</span></h1>
         <p class="hero-sub">An iOS SSH terminal companion for Claude Code. Monitor, approve, and interact with your AI coding sessions from anywhere.</p>
@@ -60,7 +61,7 @@
           <a href="#install" class="btn btn-secondary">Install CLI</a>
         </div>
       </div>
-      <div class="hero-visual fade-in">
+      <div class="hero-visual slide-in-right">
         <div class="phone-frame">
           <div class="phone-notch"></div>
           <div class="phone-screen">
@@ -93,6 +94,8 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- Features -->
   <section id="features">
     <div class="section-inner">
@@ -100,42 +103,42 @@
       <h2 class="section-title fade-in">Everything you need to stay connected.</h2>
       <p class="section-desc fade-in">Built from the ground up for developers who run Claude Code on remote machines.</p>
       <div class="features-grid">
-        <div class="feature-card fade-in">
+        <div class="feature-card fade-in stagger-0">
           <div class="feature-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
           </div>
           <h3>Native Terminal</h3>
           <p>Real xterm emulation powered by SwiftTerm. Full color, scrollback, and VT100 — not a web view.</p>
         </div>
-        <div class="feature-card fade-in">
+        <div class="feature-card fade-in stagger-1">
           <div class="feature-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="9" y1="3" x2="9" y2="17"/></svg>
           </div>
           <h3>tmux Sessions</h3>
           <p>Independent viewport with grouped sessions. Your phone gets its own window size, no fighting with your desktop.</p>
         </div>
-        <div class="feature-card fade-in">
+        <div class="feature-card fade-in stagger-2">
           <div class="feature-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <h3>Quick Actions</h3>
           <p>One-tap approve, reject, continue, or interrupt. No typing on a tiny keyboard when a button will do.</p>
         </div>
-        <div class="feature-card fade-in">
+        <div class="feature-card fade-in stagger-3">
           <div class="feature-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <h3>Reach Any Machine</h3>
           <p>ProxyJump, SOCKS5, and WireGuard connectivity. Reach your dev box through Tailscale, firewalls, or VPNs.</p>
         </div>
-        <div class="feature-card fade-in">
+        <div class="feature-card fade-in stagger-4">
           <div class="feature-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           </div>
           <h3>Auto-Reconnect</h3>
           <p>Seamless recovery on network drops. Switch from WiFi to cellular and back without losing your session.</p>
         </div>
-        <div class="feature-card fade-in">
+        <div class="feature-card fade-in stagger-5">
           <div class="feature-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
@@ -146,6 +149,8 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- How It Works -->
   <section id="how-it-works" style="background: var(--surface);">
     <div class="section-inner" style="text-align: center;">
@@ -153,25 +158,36 @@
       <h2 class="section-title fade-in">Up and running in three steps.</h2>
       <p class="section-desc fade-in" style="margin-left: auto; margin-right: auto;">No account needed. No server component. Just SSH.</p>
       <div class="steps">
-        <div class="step fade-in">
-          <div class="step-number">1</div>
-          <h3>Install the CLI</h3>
-          <p>The companion CLI sets up tmux session management on your dev machine.</p>
-          <code>brew install claudepilot</code>
+        <div class="step fade-in stagger-0">
+          <div class="step-accent"></div>
+          <div class="step-content">
+            <div class="step-label">Step 1</div>
+            <h3>Install the CLI</h3>
+            <p>The companion CLI sets up tmux session management on your dev machine.</p>
+            <code>brew install claudepilot</code>
+          </div>
         </div>
-        <div class="step fade-in">
-          <div class="step-number">2</div>
-          <h3>Add Your Host</h3>
-          <p>Configure your SSH connection in the app — hostname, key, and network provider.</p>
+        <div class="step fade-in stagger-1">
+          <div class="step-accent"></div>
+          <div class="step-content">
+            <div class="step-label">Step 2</div>
+            <h3>Add Your Host</h3>
+            <p>Configure your SSH connection in the app — hostname, key, and network provider.</p>
+          </div>
         </div>
-        <div class="step fade-in">
-          <div class="step-number">3</div>
-          <h3>Tap In</h3>
-          <p>Connect to any tmux session from your phone. Watch Claude work, approve changes on the go.</p>
+        <div class="step fade-in stagger-2">
+          <div class="step-accent"></div>
+          <div class="step-content">
+            <div class="step-label">Step 3</div>
+            <h3>Tap In</h3>
+            <p>Connect to any tmux session from your phone. Watch Claude work, approve changes on the go.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <!-- Install -->
   <section id="install">
@@ -193,6 +209,8 @@
       </div>
     </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <!-- Pricing -->
   <section id="pricing" style="background: var(--surface);">
@@ -225,10 +243,36 @@
   </footer>
 
   <script>
-    // Nav scroll effect
+    // Nav scroll effect + hero parallax
     const nav = document.getElementById('nav');
+    const heroText = document.querySelector('.hero-text');
+    const heroVisual = document.querySelector('.hero-visual');
+    const heroSection = document.querySelector('.hero');
+    let heroRevealed = false;
+
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 40);
+
+      // Wait for initial reveal animation before applying parallax
+      if (!heroRevealed) {
+        if (heroText && heroText.classList.contains('visible')) heroRevealed = true;
+        else return;
+      }
+
+      // Parallax: hero content drifts up and fades as you scroll
+      if (heroSection && y > 0) {
+        const heroH = heroSection.offsetHeight;
+        const progress = Math.min(y / heroH, 1);
+        if (heroText) {
+          heroText.style.transform = 'scale(' + (1 - progress * 0.08) + ') translateY(' + (progress * -40) + 'px)';
+          heroText.style.opacity = 1 - progress * 0.8;
+        }
+        if (heroVisual) {
+          heroVisual.style.transform = 'translateX(0) translateY(' + (progress * -60) + 'px)';
+          heroVisual.style.opacity = 1 - progress * 0.6;
+        }
+      }
     }, { passive: true });
 
     // Fade-in on scroll
@@ -241,7 +285,7 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in, .scale-in, .slide-in-right').forEach(el => observer.observe(el));
 
     // Copy to clipboard
     function copyInstall() {
@@ -253,7 +297,7 @@
       });
     }
 
-    // Starfield + bloom system
+    // Nebula particle + bloom system
     (function() {
       const canvas = document.getElementById('starfield');
       const ctx = canvas.getContext('2d');
@@ -263,15 +307,16 @@
         [139, 92, 246],  // purple
         [167, 139, 250], // purple-light
         [6, 182, 212],   // cyan
-        [226, 232, 240], // white-ish
+        [200, 210, 230], // cool white
+        [100, 120, 180], // muted blue
       ];
 
-      // Bloom targets: elements that get a soft glow behind them
+      // Bloom targets
       const BLOOMS = [
-        { sel: '.hero h1',      color: [139, 92, 246], radius: 400, alpha: 0.18 },
-        { sel: '.phone-frame',  color: [6, 182, 212],  radius: 350, alpha: 0.14 },
-        { sel: '.section-title', color: [139, 92, 246], radius: 260, alpha: 0.09, all: true },
-        { sel: '.pricing-card', color: [139, 92, 246], radius: 280, alpha: 0.10 },
+        { sel: '.hero h1',       color: [139, 92, 246], radius: 450, alpha: 0.18 },
+        { sel: '.phone-frame',   color: [6, 182, 212],  radius: 380, alpha: 0.14 },
+        { sel: '.section-title', color: [139, 92, 246], radius: 280, alpha: 0.08, all: true },
+        { sel: '.pricing-card',  color: [139, 92, 246], radius: 300, alpha: 0.10 },
       ];
 
       function resize() {
@@ -285,27 +330,110 @@
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
 
+      // Pre-render soft particle textures at various sizes for performance
+      var particleCache = {};
+      function getParticleTexture(size, color, alpha) {
+        var key = size + '|' + color.join(',') + '|' + (alpha * 100 | 0);
+        if (particleCache[key]) return particleCache[key];
+
+        var s = Math.ceil(size * 4 * dpr);
+        if (s < 2) s = 2;
+        var off = document.createElement('canvas');
+        off.width = s;
+        off.height = s;
+        var oc = off.getContext('2d');
+        var half = s / 2;
+        var grad = oc.createRadialGradient(half, half, 0, half, half, half);
+        grad.addColorStop(0, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + alpha + ')');
+        grad.addColorStop(0.4, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',' + (alpha * 0.5) + ')');
+        grad.addColorStop(1, 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] + ',0)');
+        oc.fillStyle = grad;
+        oc.beginPath();
+        oc.arc(half, half, half, 0, Math.PI * 2);
+        oc.fill();
+
+        particleCache[key] = off;
+        return off;
+      }
+
       function createParticles() {
-        const area = w * h;
-        const count = Math.min(Math.floor(area / 1500), 500);
+        particleCache = {};
+        var area = w * h;
+
+        // Heavy on crisp dots (like the preview image), with bokeh accents
+        var farCount = Math.min(Math.floor(area / 400), 1800);
+        var midCount = Math.min(Math.floor(area / 2000), 360);
+        var nearCount = Math.min(Math.floor(area / 10000), 80);
+
         particles = [];
-        for (let i = 0; i < count; i++) {
-          const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+
+        // Far layer — dense crisp dots, mostly white/cool tones
+        for (var i = 0; i < farCount; i++) {
+          // Bias heavily towards white/cool colors
+          var color = Math.random() < 0.6
+            ? COLORS[3]  // cool white
+            : COLORS[Math.floor(Math.random() * COLORS.length)];
           particles.push({
             x: Math.random() * w,
             y: Math.random() * h,
-            r: 0.3 + Math.random() * 1.0,
+            size: 0.5 + Math.random() * 1.2,
             color: color,
-            alpha: 0.15 + Math.random() * 0.55,
-            twinkleSpeed: 0.3 + Math.random() * 1.5,
+            alpha: 0.6 + Math.random() * 0.4,
+            layer: 0,
+            twinkleSpeed: 0.4 + Math.random() * 1.5,
             twinkleOffset: Math.random() * Math.PI * 2,
-            drift: (Math.random() - 0.5) * 0.06,
+            drift: (Math.random() - 0.5) * 0.025,
+            scaleX: 1,
+            scaleY: 1,
+            rotation: 0,
           });
         }
+
+        // Mid layer — soft small-medium bokeh
+        for (var i = 0; i < midCount; i++) {
+          var color = COLORS[Math.floor(Math.random() * COLORS.length)];
+          var stretch = 0.75 + Math.random() * 0.5;
+          particles.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            size: 2 + Math.random() * 4,
+            color: color,
+            alpha: 0.16 + Math.random() * 0.48,
+            layer: 1,
+            twinkleSpeed: 0.2 + Math.random() * 0.8,
+            twinkleOffset: Math.random() * Math.PI * 2,
+            drift: (Math.random() - 0.5) * 0.04,
+            scaleX: stretch,
+            scaleY: 2 - stretch,
+            rotation: Math.random() * Math.PI,
+          });
+        }
+
+        // Near layer — large diffuse bokeh
+        for (var i = 0; i < nearCount; i++) {
+          var color = COLORS[Math.floor(Math.random() * 3)];
+          var stretch = 0.65 + Math.random() * 0.7;
+          particles.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            size: 6 + Math.random() * 14,
+            color: color,
+            alpha: 0.06 + Math.random() * 0.16,
+            layer: 2,
+            twinkleSpeed: 0.1 + Math.random() * 0.4,
+            twinkleOffset: Math.random() * Math.PI * 2,
+            drift: (Math.random() - 0.5) * 0.06,
+            scaleX: stretch,
+            scaleY: 2 - stretch,
+            rotation: Math.random() * Math.PI,
+          });
+        }
+
+        particles.sort(function(a, b) { return a.layer - b.layer; });
       }
 
       function drawBlooms(t) {
-        for (let b = 0; b < BLOOMS.length; b++) {
+        for (var b = 0; b < BLOOMS.length; b++) {
           var bloom = BLOOMS[b];
           var els = bloom.all
             ? document.querySelectorAll(bloom.sel)
@@ -316,8 +444,6 @@
             var rect = els[e].getBoundingClientRect();
             var cx = rect.left + rect.width / 2;
             var cy = rect.top + rect.height / 2;
-
-            // Only draw if element is near viewport
             if (cy < -bloom.radius || cy > h + bloom.radius) continue;
 
             var pulse = 1 + Math.sin(t * 0.0008 + b) * 0.08;
@@ -325,7 +451,7 @@
             var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
             var c = bloom.color;
             grad.addColorStop(0, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + bloom.alpha + ')');
-            grad.addColorStop(0.5, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (bloom.alpha * 0.3) + ')');
+            grad.addColorStop(0.4, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (bloom.alpha * 0.25) + ')');
             grad.addColorStop(1, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0)');
             ctx.fillStyle = grad;
             ctx.beginPath();
@@ -338,28 +464,39 @@
       function draw(t) {
         ctx.clearRect(0, 0, w, h);
 
-        // Blooms first (behind particles)
         drawBlooms(t);
 
-        // Particles — tiny specks
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-          const twinkle = Math.sin(t * 0.001 * p.twinkleSpeed + p.twinkleOffset);
-          const alpha = p.alpha * (0.5 + twinkle * 0.5);
+        for (var i = 0; i < particles.length; i++) {
+          var p = particles[i];
+          var twinkle = Math.sin(t * 0.001 * p.twinkleSpeed + p.twinkleOffset);
+          var alpha = p.alpha * (0.5 + twinkle * 0.5);
+          if (alpha < 0.005) continue;
 
-          if (alpha < 0.02) continue;
+          if (p.layer === 0) {
+            // Far: crisp tiny dots — direct fill, no texture overhead
+            ctx.globalAlpha = alpha;
+            ctx.fillStyle = 'rgb(' + p.color[0] + ',' + p.color[1] + ',' + p.color[2] + ')';
+            ctx.fillRect(p.x, p.y, p.size, p.size);
+          } else {
+            // Mid/Near: soft bokeh via pre-rendered radial gradient texture
+            var tex = getParticleTexture(p.size, p.color, 1);
+            var drawSize = p.size * 4;
+            ctx.globalAlpha = alpha;
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rotation);
+            ctx.scale(p.scaleX, p.scaleY);
+            ctx.drawImage(tex, -drawSize / 2, -drawSize / 2, drawSize, drawSize);
+            ctx.restore();
+          }
 
-          const [r, g, b] = p.color;
-
-          ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
-          ctx.fillRect(p.x, p.y, p.r, p.r);
-
-          // Slow drift
+          // Drift
           p.x += p.drift;
-          if (p.x < -10) p.x = w + 10;
-          if (p.x > w + 10) p.x = -10;
+          if (p.x < -20) p.x = w + 20;
+          if (p.x > w + 20) p.x = -20;
         }
 
+        ctx.globalAlpha = 1;
         requestAnimationFrame(draw);
       }
 
@@ -369,7 +506,7 @@
         requestAnimationFrame(draw);
       }
 
-      let resizeTimer;
+      var resizeTimer;
       window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
