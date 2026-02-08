@@ -4,12 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claude Pilot — Your Claude Code sessions, in your pocket.</title>
-  <meta name="description" content="Claude Pilot is an iOS SSH terminal companion for Claude Code. Monitor, approve, and interact with your AI coding sessions from anywhere.">
-  <meta name="theme-color" content="#09090f">
+  <!-- HTML Meta Tags -->
+  <title>Claude Pilot — Your Claude Code sessions, in your pocket.</title>
+  <meta name="description" content="An iOS SSH terminal companion for Claude Code. Monitor, approve, and interact with your AI coding sessions from anywhere.">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://claudepilot.net">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Claude Pilot — Your Claude Code sessions, in your pocket.">
+  <meta property="og:description" content="An iOS SSH terminal companion for Claude Code. Monitor, approve, and interact with your AI coding sessions from anywhere.">
+  <meta property="og:image" content="https://claudepilot.net/preview.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://claudepilot.net">
+  <meta name="twitter:title" content="Claude Pilot — Your Claude Code sessions, in your pocket.">
+  <meta name="twitter:description" content="An iOS SSH terminal companion for Claude Code. Monitor, approve, and interact with your AI coding sessions from anywhere.">
+  <meta name="twitter:image" content="https://claudepilot.net/preview.png">
+
+  <!-- Meta Tags Generated via https://www.opengraph.io -->
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="starfield"></canvas>
+
   <!-- Nav -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -28,7 +47,6 @@
 
   <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="hero-glow"></div>
     <div class="hero-inner">
       <div class="hero-text fade-in">
         <div class="hero-badge"><span>v0.1.0</span> Pre-release beta</div>
@@ -234,6 +252,134 @@
         setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
       });
     }
+
+    // Starfield + bloom system
+    (function() {
+      const canvas = document.getElementById('starfield');
+      const ctx = canvas.getContext('2d');
+      let w, h, particles, dpr;
+
+      const COLORS = [
+        [139, 92, 246],  // purple
+        [167, 139, 250], // purple-light
+        [6, 182, 212],   // cyan
+        [226, 232, 240], // white-ish
+      ];
+
+      // Bloom targets: elements that get a soft glow behind them
+      const BLOOMS = [
+        { sel: '.hero h1',      color: [139, 92, 246], radius: 400, alpha: 0.18 },
+        { sel: '.phone-frame',  color: [6, 182, 212],  radius: 350, alpha: 0.14 },
+        { sel: '.section-title', color: [139, 92, 246], radius: 260, alpha: 0.09, all: true },
+        { sel: '.pricing-card', color: [139, 92, 246], radius: 280, alpha: 0.10 },
+      ];
+
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function createParticles() {
+        const area = w * h;
+        const count = Math.min(Math.floor(area / 1500), 500);
+        particles = [];
+        for (let i = 0; i < count; i++) {
+          const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+          particles.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: 0.3 + Math.random() * 1.0,
+            color: color,
+            alpha: 0.15 + Math.random() * 0.55,
+            twinkleSpeed: 0.3 + Math.random() * 1.5,
+            twinkleOffset: Math.random() * Math.PI * 2,
+            drift: (Math.random() - 0.5) * 0.06,
+          });
+        }
+      }
+
+      function drawBlooms(t) {
+        for (let b = 0; b < BLOOMS.length; b++) {
+          var bloom = BLOOMS[b];
+          var els = bloom.all
+            ? document.querySelectorAll(bloom.sel)
+            : [document.querySelector(bloom.sel)];
+
+          for (var e = 0; e < els.length; e++) {
+            if (!els[e]) continue;
+            var rect = els[e].getBoundingClientRect();
+            var cx = rect.left + rect.width / 2;
+            var cy = rect.top + rect.height / 2;
+
+            // Only draw if element is near viewport
+            if (cy < -bloom.radius || cy > h + bloom.radius) continue;
+
+            var pulse = 1 + Math.sin(t * 0.0008 + b) * 0.08;
+            var r = bloom.radius * pulse;
+            var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+            var c = bloom.color;
+            grad.addColorStop(0, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + bloom.alpha + ')');
+            grad.addColorStop(0.5, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (bloom.alpha * 0.3) + ')');
+            grad.addColorStop(1, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0)');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(cx, cy, r, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+      }
+
+      function draw(t) {
+        ctx.clearRect(0, 0, w, h);
+
+        // Blooms first (behind particles)
+        drawBlooms(t);
+
+        // Particles — tiny specks
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          const twinkle = Math.sin(t * 0.001 * p.twinkleSpeed + p.twinkleOffset);
+          const alpha = p.alpha * (0.5 + twinkle * 0.5);
+
+          if (alpha < 0.02) continue;
+
+          const [r, g, b] = p.color;
+
+          ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+          ctx.fillRect(p.x, p.y, p.r, p.r);
+
+          // Slow drift
+          p.x += p.drift;
+          if (p.x < -10) p.x = w + 10;
+          if (p.x > w + 10) p.x = -10;
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      function init() {
+        resize();
+        createParticles();
+        requestAnimationFrame(draw);
+      }
+
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          resize();
+          createParticles();
+        }, 150);
+      });
+
+      init();
+    })();
   </script>
 </body>
 </html>
