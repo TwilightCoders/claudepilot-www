@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Pilot — Your Claude Code sessions, in your pocket.</title>
+  <meta name="description" content="Claude Pilot is an iOS SSH terminal companion for Claude Code. Monitor, approve, and interact with your AI coding sessions from anywhere.">
+  <meta name="theme-color" content="#09090f">
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <img src="icon.png" alt="Claude Pilot" width="32" height="32">
+        Claude Pilot
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#install">Install</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#install" class="btn btn-primary nav-cta">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div class="hero-text fade-in">
+        <div class="hero-badge"><span>v0.1.0</span> Pre-release beta</div>
+        <h1>Your Claude Code sessions,<br><span class="gradient-text">in your pocket.</span></h1>
+        <p class="hero-sub">An iOS SSH terminal companion for Claude Code. Monitor, approve, and interact with your AI coding sessions from anywhere.</p>
+        <div class="hero-buttons">
+          <a href="#install" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            Download for iOS
+          </a>
+          <a href="#install" class="btn btn-secondary">Install CLI</a>
+        </div>
+      </div>
+      <div class="hero-visual fade-in">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="tmux-bar">
+              <span class="tmux-tab">0:claude*</span>
+              <span>volte@dev</span>
+            </div>
+            <br>
+            <span class="prompt">$</span> <span class="cmd">claude</span><br>
+            <br>
+            <span class="claude-badge">Claude</span> I'll implement the authentication<br>
+            module. Let me start by reading the<br>
+            existing user model...<br>
+            <br>
+            <span class="output">Read src/models/user.ts</span><br>
+            <span class="output">Read src/middleware/auth.ts</span><br>
+            <br>
+            <span class="claude-badge">Claude</span> I've analyzed the codebase.<br>
+            Here's my plan:<br>
+            <br>
+            <span class="success">1.</span> Add JWT verification middleware<br>
+            <span class="success">2.</span> Create session refresh endpoint<br>
+            <span class="success">3.</span> Update user model with tokens<br>
+            <br>
+            <span class="output">Do you want me to proceed? (y/n)</span><br>
+            <span class="prompt">$</span> <span class="cmd" style="animation: blink 1s step-end infinite;">_</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="section-inner">
+      <div class="section-label fade-in">Features</div>
+      <h2 class="section-title fade-in">Everything you need to stay connected.</h2>
+      <p class="section-desc fade-in">Built from the ground up for developers who run Claude Code on remote machines.</p>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          </div>
+          <h3>Native Terminal</h3>
+          <p>Real xterm emulation powered by SwiftTerm. Full color, scrollback, and VT100 — not a web view.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="9" y1="3" x2="9" y2="17"/></svg>
+          </div>
+          <h3>tmux Sessions</h3>
+          <p>Independent viewport with grouped sessions. Your phone gets its own window size, no fighting with your desktop.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Quick Actions</h3>
+          <p>One-tap approve, reject, continue, or interrupt. No typing on a tiny keyboard when a button will do.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Reach Any Machine</h3>
+          <p>ProxyJump, SOCKS5, and WireGuard connectivity. Reach your dev box through Tailscale, firewalls, or VPNs.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3>Auto-Reconnect</h3>
+          <p>Seamless recovery on network drops. Switch from WiFi to cellular and back without losing your session.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Secure by Default</h3>
+          <p>SSH keys stored in the iOS Keychain. Ed25519, RSA, and ECDSA — with passphrase support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" style="background: var(--surface);">
+    <div class="section-inner" style="text-align: center;">
+      <div class="section-label fade-in">How It Works</div>
+      <h2 class="section-title fade-in">Up and running in three steps.</h2>
+      <p class="section-desc fade-in" style="margin-left: auto; margin-right: auto;">No account needed. No server component. Just SSH.</p>
+      <div class="steps">
+        <div class="step fade-in">
+          <div class="step-number">1</div>
+          <h3>Install the CLI</h3>
+          <p>The companion CLI sets up tmux session management on your dev machine.</p>
+          <code>brew install claudepilot</code>
+        </div>
+        <div class="step fade-in">
+          <div class="step-number">2</div>
+          <h3>Add Your Host</h3>
+          <p>Configure your SSH connection in the app — hostname, key, and network provider.</p>
+        </div>
+        <div class="step fade-in">
+          <div class="step-number">3</div>
+          <h3>Tap In</h3>
+          <p>Connect to any tmux session from your phone. Watch Claude work, approve changes on the go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Install -->
+  <section id="install">
+    <div class="section-inner" style="text-align: center;">
+      <div class="section-label fade-in">Install</div>
+      <h2 class="section-title fade-in">Get the companion CLI.</h2>
+      <p class="section-desc fade-in" style="margin-left: auto; margin-right: auto;">Install on any machine you want to connect to from your phone.</p>
+      <div class="install-block fade-in">
+        <div class="code-block">
+          <code id="install-cmd">curl -fsSL https://claudepilot.net/install.sh | bash</code>
+          <button class="copy-btn" onclick="copyInstall()" id="copy-btn">Copy</button>
+        </div>
+        <p class="install-note">
+          Sets up the <code style="color:var(--accent); font-size: 13px;">claudepilot</code> CLI for tmux session management and discovery.
+          <br>Or install via Homebrew: <code style="color:var(--accent); font-size: 13px;">brew install claudepilot</code>
+          <br><br>
+          <a href="https://github.com/TwilightCoders/claudepilot">View source on GitHub</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" style="background: var(--surface);">
+    <div class="section-inner" style="text-align: center;">
+      <div class="section-label fade-in">Pricing</div>
+      <h2 class="section-title fade-in">Simple, like it should be.</h2>
+      <div class="pricing-card fade-in">
+        <div class="price">Free</div>
+        <p class="price-desc">During the beta, Claude Pilot is completely free.</p>
+        <p class="price-note">We'll introduce pricing when the app reaches v1.0. Early adopters will be taken care of.</p>
+        <a href="#install" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="icon.png" alt="Claude Pilot" width="24" height="24">
+        Built with &#9829; by Twilight Coders, LLC
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/TwilightCoders/claudepilot">GitHub</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Twilight Coders, LLC</div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Copy to clipboard
+    function copyInstall() {
+      const cmd = document.getElementById('install-cmd').textContent;
+      navigator.clipboard.writeText(cmd).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
