@@ -6,6 +6,8 @@ module ClaudePilot
     version ClaudePilot::VERSION
     description 'Manage tmux + Claude Code sessions'
 
+    command_class ClaudePilot::BaseCommand
+
     load_commands(File.expand_path('commands/*.rb', __dir__))
   end
 end
