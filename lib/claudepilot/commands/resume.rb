@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class Resume < BaseCommand
-      self.command_name = :resume
       description 'Attach to a session'
 
       argument :name, String, description: 'Session name'

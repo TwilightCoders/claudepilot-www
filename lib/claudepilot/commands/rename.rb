@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class Rename < BaseCommand
-      self.command_name = :rename
       description 'Rename a session'
 
       argument :old_name, String, description: 'Current session name'

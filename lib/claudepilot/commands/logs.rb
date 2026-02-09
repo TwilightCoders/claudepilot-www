@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class Logs < BaseCommand
-      self.command_name = :logs
       description 'View session output'
 
       option :lines, Integer, short: :n, description: 'Number of lines', default: 50

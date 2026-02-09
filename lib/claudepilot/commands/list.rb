@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class List < BaseCommand
-      self.command_name = :list
       description 'List active Claude sessions'
 
       flag :all, short: :a, description: 'Show all sessions including dead'

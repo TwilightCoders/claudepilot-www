@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class Analyze < BaseCommand
-      self.command_name = :analyze
       description 'Analyze conversations by context'
 
       option :categories, String, description: 'Suggested categories (comma-separated)'

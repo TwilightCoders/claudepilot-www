@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class Status < BaseCommand
-      self.command_name = :status
       description 'Show session health details'
 
       flag :json, description: 'Output as JSON'

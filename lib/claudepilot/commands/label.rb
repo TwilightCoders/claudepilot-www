@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class Label < BaseCommand
-      self.command_name = :label
       description 'Set a friendly label on a session'
 
       argument :name, String, description: 'Session name'

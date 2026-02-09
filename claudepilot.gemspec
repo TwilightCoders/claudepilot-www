@@ -24,6 +24,6 @@ Gem::Specification.new do |spec|
   spec.executables   = ['claudepilot']
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'ergane', '~> 0.1'
+  spec.add_dependency 'athena', '~> 0.1'
   spec.add_dependency 'zeitwerk', '~> 2.6'
 end

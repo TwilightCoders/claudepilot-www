@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class Usage < BaseCommand
-      self.command_name = :usage
       description 'Show API usage and rate limits'
 
       flag :json, description: 'Output as JSON'

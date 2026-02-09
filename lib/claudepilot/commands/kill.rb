@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class Kill < BaseCommand
-      self.command_name = :kill
       description 'Kill session(s)'
 
       flag :force, short: :f, description: 'Skip confirmation'

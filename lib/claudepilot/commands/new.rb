@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class New < BaseCommand
-      self.command_name = :new
       description 'Create and attach to a Claude session'
 
       option :dir, String, short: :d, description: 'Working directory'

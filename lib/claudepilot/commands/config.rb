@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class Config < BaseCommand
-      self.command_name = :config
       description 'View or set configuration'
 
       def run(key = nil, *value_parts)

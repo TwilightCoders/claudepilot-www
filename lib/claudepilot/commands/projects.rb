@@ -3,7 +3,6 @@
 module ClaudePilot
   module Commands
     class Projects < BaseCommand
-      self.command_name = :projects
       description 'List Claude Code projects'
 
       flag :json, description: 'Output as JSON'
