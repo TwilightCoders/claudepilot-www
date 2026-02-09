@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/claudepilot'
+
+String.disable_colorization = !$stdout.tty?
+
+argv = ARGV.empty? ? ['list'] : ARGV.dup
+ClaudePilot::Tool.start(argv)
